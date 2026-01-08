@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>I Jornadas de Cocina Tradicional de Ceuta · Contacto</title>
+    <link rel="stylesheet" href="./assets/styles/tailwind.css" />
+  </head>
+
+  <body class="min-h-dvh bg-slate-50 text-slate-900">
+    <a
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+      href="#contenido"
+      >Saltar al contenido</a
+    >
+
+    <header class="bg-[--color-ipsi-corporate] text-white">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
+        <div class="flex items-center gap-3">
+          <div class="size-11 rounded-full bg-white/15 ring-1 ring-white/20"></div>
+          <div class="leading-tight">
+            <p class="text-sm opacity-90">I Jornadas</p>
+            <p class="font-semibold">Cocina Tradicional de Ceuta</p>
+          </div>
+        </div>
+
+        <nav class="flex items-center gap-2">
+          <a class="rounded-md px-3 py-2 text-sm font-semibold hover:bg-white/10" href="./index.html"
+            >Participantes</a
+          >
+          <a class="rounded-md px-3 py-2 text-sm font-semibold hover:bg-white/10" href="./contact.html"
+            >Contacto</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido" class="mx-auto max-w-3xl px-4 py-10">
+      <!-- Reutilizamos el hero, pero como no usamos variables, crea una versión para contacto -->
+      <include src="views/components/page-hero-contact.html"></include>
+
+      <section class="card p-6">
+        <h2 class="text-xl font-bold tracking-tight">Formulario</h2>
+        <p class="mt-1 text-sm text-slate-600">
+          Escríbenos para solicitar información o reservar plaza en charlas, talleres y cursos.
+        </p>
+
+        <form class="mt-6 grid gap-4" name="contact" method="post" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+          <include src="views/components/form-honeypot.html"></include>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <include src="views/components/form-field-name.html"></include>
+            <include src="views/components/form-field-email.html"></include>
+          </div>
+
+          <label class="grid gap-1 text-sm font-semibold">
+            Tipo de consulta
+            <select
+              class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[--color-ipsi-accent]"
+              name="topic"
+            >
+              <option value="inscripcion">Inscripción</option>
+              <option value="info">Información general</option>
+              <option value="colaboraciones">Colaboraciones</option>
+            </select>
+          </label>
+
+          <include src="views/components/form-field-message.html"></include>
+
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <label class="flex items-center gap-2 text-sm text-slate-700">
+              <input class="size-4 rounded border-slate-300" type="checkbox" name="privacy" required />
+              Acepto el tratamiento de datos para gestionar la consulta.
+            </label>
+
+            <button class="btn-primary" type="submit">Enviar</button>
+          </div>
+        </form>
+
+      </section>
+    </main>
+
+    <footer class="bg-[--color-ipsi-corporate] text-white">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <p class="text-sm opacity-90">© I Jornadas de Cocina Tradicional de Ceuta</p>
+        <a class="text-sm font-semibold hover:underline" href="./index.html">Volver</a>
+      </div>
+    </footer>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
