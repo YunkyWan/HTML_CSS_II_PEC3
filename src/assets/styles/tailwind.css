@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
-/* 1) Tema (Tailwind v4): tokens del proyecto */
+:root {
+  --color-ipsi-corporate: #1b2939;
+  --color-ipsi-focus: #243751;
+  --color-ipsi-accent: #2f76e3;
+}
+
 @theme {
   --color-ipsi-corporate: #1b2939;
   --color-ipsi-focus: #243751;
   --color-ipsi-accent: #2f76e3;
-
-  /* Tipografía: usa system por ahora, luego metemos una font si quieres */
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
-/* 2) Clases extraídas con @apply (mínimo 3) */
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-semibold
-      text-white bg-[--color-ipsi-corporate] transition
-      hover:bg-[--color-ipsi-focus] focus:outline-none focus:ring-2 focus:ring-[--color-ipsi-accent]
+      text-white transition
+      bg-[var(--color-ipsi-corporate)]
+      hover:bg-[var(--color-ipsi-focus)]
+      focus:outline-none focus:ring-2 focus:ring-[var(--color-ipsi-accent)]
       focus:ring-offset-2;
   }
 

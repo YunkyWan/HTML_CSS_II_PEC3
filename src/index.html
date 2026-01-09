@@ -15,26 +15,7 @@
       >Saltar al contenido</a
     >
 
-    <header class="bg-[--color-ipsi-corporate] text-white">
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
-        <div class="flex items-center gap-3">
-          <div class="size-11 rounded-full bg-white/15 ring-1 ring-white/20"></div>
-          <div class="leading-tight">
-            <p class="text-sm opacity-90">I Jornadas</p>
-            <p class="font-semibold">Cocina Tradicional de Ceuta</p>
-          </div>
-        </div>
-
-        <nav class="flex items-center gap-2">
-          <a class="rounded-md px-3 py-2 text-sm font-semibold hover:bg-white/10" href="./index.html"
-            >Participantes</a
-          >
-          <a class="rounded-md px-3 py-2 text-sm font-semibold hover:bg-white/10" href="./contact.html"
-            >Contacto</a
-          >
-        </nav>
-      </div>
-    </header>
+    <include src="views/header.html"></include>
 
     <main id="contenido" class="mx-auto max-w-6xl px-4 py-10">
       <include src="views/components/page-hero.html"></include>
@@ -51,12 +32,7 @@
       </section>
     </main>
 
-    <footer class="bg-[--color-ipsi-corporate] text-white">
-      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-sm opacity-90">© I Jornadas de Cocina Tradicional de Ceuta</p>
-        <a class="text-sm font-semibold hover:underline" href="./contact.html">Contacto</a>
-      </div>
-    </footer>
+    <include src="views/footer.html"></include>
 
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
